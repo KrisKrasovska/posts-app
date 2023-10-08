@@ -29,11 +29,29 @@ export default async function Post({ params }: Props) {
     }
   );
   const data = await res.json();
+  const resComments = await fetch(
+    `https://jsonplaceholder.typicode.com/posts/${postId}/comments`,
+    {
+      cache: "no-store",
+    }
+  );
+  const dataComments = await resComments.json();
 
   return (
     <>
       <h2 className={styles.title}>{data.title}</h2>
       <p>{data.body}</p>
+      <p>Comments</p>
+      <ul>
+        {dataComments.map(
+          ({ body, email }: { body: string; email: string }) => (
+            <li key={email}>
+              <p>{email}</p>
+              <p>{body}</p>
+            </li>
+          )
+        )}
+      </ul>
     </>
   );
 }
