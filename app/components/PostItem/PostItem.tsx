@@ -2,9 +2,9 @@ import { Post } from "@/types/types";
 import styles from "./PostItem.module.scss";
 import Link from "next/link";
 
-interface Props {
+type Props = {
   post: Post;
-}
+};
 
 export default function PostItem({ post }: Props) {
   const { id, title } = post;
