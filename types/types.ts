@@ -4,7 +4,6 @@ export interface Post {
 }
 
 export interface ProfileValue {
-	name: string,
-	email: string,
-	password: string
- }
+  email: string;
+  password: string;
+}
