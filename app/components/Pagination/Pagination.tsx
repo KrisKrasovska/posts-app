@@ -1,10 +1,14 @@
 import Link from "next/link";
 import styles from "./Pagination.module.scss";
 
-export default function Pagination() {
+type Props = { total: number };
+
+export default function Pagination({ total }: Props) {
+  const pages = Array.from({ length: total }, (_, index) => index + 1);
+
   return (
     <ul className={styles.list}>
-      {[1, 2, 3].map((item) => (
+      {pages.map((item) => (
         <li key={item} className={styles.item}>
           <Link href={`/posts?page=${item}`}>{item}</Link>
         </li>

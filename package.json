@@ -11,6 +11,7 @@
   "dependencies": {
     "@nanostores/react": "^0.7.1",
     "axios": "^1.5.1",
+    "nanostores": "^0.9.3",
     "next": "13.5.4",
     "next-seo": "^6.1.0",
     "react": "^18",

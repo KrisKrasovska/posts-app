@@ -11,6 +11,7 @@ type Props = { searchParams: { [key: string]: string | string[] | undefined } };
 
 export default function Posts({ searchParams }: Props) {
   const { page } = searchParams;
+
   return (
     <>
       <h1 className={styles.title}>List of posts</h1>
