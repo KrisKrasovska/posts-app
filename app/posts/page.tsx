@@ -7,11 +7,14 @@ export const metadata: Metadata = {
   description: "Page which consist the list of posts",
 };
 
-export default function Posts() {
+type Props = { searchParams: { [key: string]: string | string[] | undefined } };
+
+export default function Posts({ searchParams }: Props) {
+  const { page } = searchParams;
   return (
     <>
       <h1 className={styles.title}>List of posts</h1>
-      <PostsList />
+      <PostsList page={page} />
     </>
   );
 }

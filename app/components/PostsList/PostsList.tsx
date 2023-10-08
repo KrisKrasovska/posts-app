@@ -1,9 +1,14 @@
 import { Post } from "@/types/types";
 import styles from "./PostsList.module.scss";
 import PostItem from "../PostItem/PostItem";
+import Pagination from "../Pagination/Pagination";
 
-export default async function PostsList() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
+type Props = {
+	page: string | string[] | undefined ;
+}
+
+export default async function PostsList({page}:Props) {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts?page=${page}`, {
     cache: "no-store",
   });
   const data = await res.json();
@@ -15,6 +20,7 @@ export default async function PostsList() {
           <PostItem post={post} key={post.id} />
         ))}
       </ul>
+      <Pagination />
     </>
   );
 }
