@@ -24,9 +24,14 @@ export default function LoginForm() {
 
       const resp = await axios.post("http://localhost:3000/login", newData);
       if (resp.data.accessToken) {
-        logIn(newData);
+        logIn({
+          email: emailInput.value,
+          password: passwordInput.value,
+          token: resp.data.accessToken,
+        });
         router.push("/posts?page=1");
       }
+
       emailInput.value = "";
       passwordInput.value = "";
     },
