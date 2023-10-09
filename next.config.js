@@ -5,6 +5,7 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
+  experimental: { esmExternals: true },
 };
 
 module.exports = nextConfig;

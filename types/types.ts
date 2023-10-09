@@ -6,5 +6,4 @@ export interface Post {
 export interface ProfileValue {
   email: string;
   token: string;
-  password: string;
 }

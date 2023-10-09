@@ -26,7 +26,6 @@ export default function LoginForm() {
       if (resp.data.accessToken) {
         logIn({
           email: emailInput.value,
-          password: passwordInput.value,
           token: resp.data.accessToken,
         });
         router.push("/posts?page=1");
