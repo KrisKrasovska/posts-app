@@ -12,10 +12,16 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const id = params.postId;
+  const postResponse = await axios.get(
+    `https://jsonplaceholder.typicode.com/posts/${id}`,
+    {
+      headers: {
+        "Cache-Control": "no-store",
+      },
+    }
+  );
 
-  const post = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
-    cache: "no-store",
-  }).then((res) => res.json());
+  const post = postResponse.data;
 
   return {
     title: post.title,
