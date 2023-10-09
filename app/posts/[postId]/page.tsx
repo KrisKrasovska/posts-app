@@ -40,14 +40,14 @@ export default async function Post({ params }: Props) {
   return (
     <>
       <h2 className={styles.title}>{data.title}</h2>
-      <p>{data.body}</p>
-      <p>Comments</p>
+      <p className={styles.textPost}>{data.body}</p>
+      <p className={styles.textComment}>Comments</p>
       <ul>
         {dataComments.map(
           ({ body, email }: { body: string; email: string }) => (
-            <li key={email}>
-              <p>{email}</p>
-              <p>{body}</p>
+            <li className={styles.item} key={email}>
+              <p className={styles.email}>{email}</p>
+              <p className={styles.text}>{body}</p>
             </li>
           )
         )}

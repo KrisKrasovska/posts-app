@@ -11,3 +11,31 @@
   text-align: center;
   text-transform: capitalize;
 }
+
+.textPost {
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.textComment {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.item + .item {
+  margin-top: 15px;
+}
+
+.email {
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 16px;
+  color: #514b4b;
+}
