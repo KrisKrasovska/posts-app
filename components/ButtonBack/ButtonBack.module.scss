@@ -1,0 +1,18 @@
+.btn {
+  cursor: pointer;
+  width: 100px;
+  height: 30px;
+  font-family: inherit;
+  font-size: 14px;
+  background-color: #514b4b;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+
+  transition: background-color 500ms linear;
+
+  &:hover,
+  &:focus {
+    background-color: #a1a1a1;
+  }
+}

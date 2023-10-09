@@ -1,3 +1,4 @@
+import ButtonBack from "@/components/ButtonBack/ButtonBack";
 import styles from "./../page.module.scss";
 import type { Metadata, ResolvingMetadata } from "next";
 
@@ -29,6 +30,14 @@ export default async function Post({ params }: Props) {
     }
   );
   const data = await res.json();
+  const resUser = await fetch(
+    `https://jsonplaceholder.typicode.com/users/${data.userId}`,
+    {
+      cache: "no-store",
+    }
+  );
+  const dataUser = await resUser.json();
+
   const resComments = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${postId}/comments`,
     {
@@ -39,7 +48,9 @@ export default async function Post({ params }: Props) {
 
   return (
     <>
+      <ButtonBack />
       <h2 className={styles.title}>{data.title}</h2>
+      <p className={styles.textComment}>UserName : {dataUser.username}</p>
       <p className={styles.textPost}>{data.body}</p>
       <p className={styles.textComment}>Comments</p>
       <ul>

@@ -1,4 +1,4 @@
-import PostsList from "@/app/components/PostsList/PostsList";
+import PostsList from "@/components/PostsList/PostsList";
 import styles from "@/app/page.module.scss";
 import type { Metadata } from "next";
 
